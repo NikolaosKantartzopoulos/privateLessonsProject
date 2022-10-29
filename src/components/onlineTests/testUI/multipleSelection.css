@@ -8,6 +8,7 @@
   flex-flow: column;
   margin: 20px;
   box-shadow: 0 5px 10px grey;
+  border-radius: 2vw;
 }
 
 .multipleSelectionClass>* {
@@ -47,7 +48,9 @@ li:hover {
   background-color: whitesmoke;
   color: darkolivegreen;
   border: 3px solid darkolivegreen;
-  width: 150px;
+  border-radius: 1vw;
+  min-width: 200px;
+  height: 3rem;
   text-align: center;
   padding: 10px;
 }

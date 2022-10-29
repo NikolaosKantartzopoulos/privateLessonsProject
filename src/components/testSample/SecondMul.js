@@ -14,7 +14,7 @@ function SecondMul() {
 			"δ) αρχικά είναι σταθερή και στη συνέχεια αυξάνεται με ρυθμό 3 m/s, κάθε s.",
 		],
 	};
-	return <MultipleSelection data={data} />;
+	return <MultipleSelection {...data} />;
 }
 
 export default SecondMul;

@@ -10,7 +10,7 @@ function StudyGuideRoute() {
 			<MainNavbar />
 			<StudyGuide />
 			<FirstMul />
-			{/* <SecondMul /> */}
+			<SecondMul />
 		</>
 	);
 }

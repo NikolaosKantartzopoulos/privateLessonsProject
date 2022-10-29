@@ -7,11 +7,29 @@ function MultipleSelection({
 	mulTestAnswer,
 	arrayOfSelections,
 }) {
+	/***********************************************
+Declare state and get complete answer
+**********************************************/
 	const [answerSubmited, setAnswerSubmited] = useState(false);
-	const [selectedOption, setSelectedOption] = useState("No selection");
+	const [selectedOption, setSelectedOption] = useState("");
 	const [compBackgroundColor, setCompBackgroundColor] =
 		useState("rgba(0,0,0,0)");
 	const [compBorderColor, setCompBorderColor] = useState("rgba(0,0,0,0)");
+
+	let completeAnswer;
+	arrayOfSelections.forEach((sel) => {
+		if (sel[0] == mulTestAnswer) {
+			console.log(sel);
+			completeAnswer = sel;
+		}
+		return null;
+	});
+
+	/* **********************************************
+**********************************************
+		FUNCTIONS
+**********************************************
+**********************************************/
 
 	function selectOption(lvalue) {
 		console.log(`Selected answer -> ${lvalue}`);
@@ -21,19 +39,46 @@ function MultipleSelection({
 			}
 		});
 	}
-
-	let renderList = arrayOfSelections.map((sel) => (
-		<li key={sel[0]} listid={sel[0]} onClick={() => selectOption(sel[0])}>
-			{sel}
-		</li>
-	));
-
-	function clearSelection() {
-		setSelectedOption("No selection");
+	/**************************************************************** */
+	/*RENDERS THE LIST, WITH THE CURRENT SELECTION MARKED WITH BORDER*/
+	/**************************************************************** */
+	function renderList(selectedOption) {
+		return arrayOfSelections.map((sel) => {
+			/*		create border around current selection*****************/
+			if (selectedOption[0] == sel[0]) {
+				return (
+					<li
+						key={sel[0]}
+						listid={sel[0]}
+						onClick={() => selectOption(sel[0])}
+						style={{ border: "3px solid darkolivegreen" }}
+					>
+						{sel}
+					</li>
+				);
+			}
+			/* else return without border*********************/
+			return (
+				<li
+					key={sel[0]}
+					listid={sel[0]}
+					onClick={() => selectOption(sel[0])}
+					style={{ border: "3px solid rgba(0,0,0,0)" }}
+				>
+					{sel}
+				</li>
+			);
+		});
 	}
 
+	function clearSelection() {
+		setSelectedOption("");
+	}
+
+	/************************************************************** */
+	/*SUBMITS THE ANDWER AND CHANGES THE COLORS ACCORDINGLY*******/
+	/************************************************************** */
 	function submitSelection() {
-		console.log(`${selectedOption[0]} == ${mulTestAnswer}`);
 		setAnswerSubmited(true);
 		if (selectedOption[0] == mulTestAnswer) {
 			setCompBackgroundColor("lightgreen");
@@ -44,9 +89,25 @@ function MultipleSelection({
 		}
 	}
 
+	/* **********************************************
+**********************************************
+USE EFFECT
+**********************************************
+**********************************************/
+
 	useEffect(() => {
 		submitSelection;
 	}, [compBackgroundColor]);
+
+	useEffect(() => {
+		renderList(selectedOption);
+	}, [selectedOption]);
+
+	/* **********************************************
+**********************************************
+RETURN
+**********************************************
+**********************************************/
 
 	return (
 		<div
@@ -56,9 +117,14 @@ function MultipleSelection({
 				border: `5px solid ${compBorderColor}`,
 			}}
 		>
+			{/****************EXERCISE'S GOAL****************/}
 			<div className="mulTestGoal"> {mulTestGoal}</div>
+			{/****************EXERCISE'S GOAL****************/}
+			{/****************IMAGE AND OPTIONS****************/}
 			<div className="imageAndOptions">
-				<ul className="mulTestBody">{renderList}</ul>
+				{!answerSubmited && (
+					<ul className="mulTestBody">{renderList(selectedOption)}</ul>
+				)}
 				{mulTestImage && (
 					<img
 						className="mulTestImage"
@@ -67,16 +133,33 @@ function MultipleSelection({
 					></img>
 				)}
 			</div>
-			{!answerSubmited && (
+			{/****************IMAGE AND OPTIONS****************/}
+			{/****************SELECTED OPTIONS****************/}
+
+			<div
+				style={{
+					display: "flex",
+					flexFlow: "column",
+					flexBasis: "33%",
+					gap: "2vh",
+				}}
+			>
+				{/****************SELECTED OPTION****************/}
 				<div
+					className="selectedOptionDiv"
 					style={{
-						display: "flex",
-						flexFlow: "column",
-						flexBasis: "33%",
-						gap: "2vh",
+						backgroundColor: `${compBackgroundColor}`,
+						border: `5px solid ${compBorderColor}`,
 					}}
 				>
-					<div className="selectedOptionDiv"> {selectedOption}</div>
+					{selectedOption ? selectedOption : " "}
+				</div>
+				{/****************SELECTED OPTION****************/}
+				{/****************SHOW ANSWER IF WRONG****************/}
+				{answerSubmited && completeAnswer[0] !== selectedOption[0] && (
+					<div className="selectedOptionDiv">{completeAnswer}</div>
+				)}
+				{!answerSubmited && (
 					<div
 						style={{
 							display: "flex",
@@ -87,9 +170,13 @@ function MultipleSelection({
 							gap: "1vw",
 						}}
 					>
+						{/****************SHOW ANSWER IF WRONG****************/}
+						{/****************BUTTON SUBMIT****************/}
 						<button style={{ width: "25%" }} onClick={submitSelection}>
 							Submit
 						</button>
+						{/****************BUTTON SUBMIT****************/}
+						{/****************BUTTON CLEAR****************/}
 						<button
 							className="clearSelection"
 							style={{ width: "25%" }}
@@ -97,9 +184,10 @@ function MultipleSelection({
 						>
 							Clear
 						</button>
+						{/****************BUTTON CLEAR****************/}
 					</div>
-				</div>
-			)}
+				)}
+			</div>
 		</div>
 	);
 }
