@@ -1,7 +1,7 @@
 import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import App from "./App";
-import StudyGuide from "./components/StudyGuide";
+import StudyGuideRoute from "./components/StudyGuideRoute";
 import Announcements from "./components/Announcements";
 import GiorgosKleftogiannis from "./components/GiorgosKleftogiannis";
 import Contact from "./components/Contact";
@@ -15,7 +15,7 @@ const RouteSwitch = () => {
 					path="/giorgosKleftogiannis"
 					element={<GiorgosKleftogiannis />}
 				/>
-				<Route path="/studyGuide" element={<StudyGuide />} />
+				<Route path="/studyGuideRoute" element={<StudyGuideRoute />} />
 				<Route path="/announcements" element={<Announcements />} />
 				<Route path="/contact" element={<Contact />} />
 			</Routes>

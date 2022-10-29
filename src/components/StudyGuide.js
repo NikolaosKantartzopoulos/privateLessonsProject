@@ -1,12 +1,10 @@
 import React from "react";
 import rightPartImg from "../images/galaxy.jpg";
-import MainNavbar from "./MainNavbar";
 
 function StudyGuide() {
 	return (
 		<>
-			<MainNavbar />
-			<div className="flex flex-row flex-wrap bg-blue-100">
+			<div className="flex flex-row flex-wrap bg-blue-100 shadowBlock">
 				<div className="w-full sm:w-1/2">
 					<p className="text-2xl p-2  text-center">Πρόγραμμα Σπουδών</p>
 					<p className="p-2">

@@ -1,0 +1,21 @@
+import React from "react";
+import MultipleSelection from "../onlineTests/testUI/MultipleSelection";
+import galaxyImg from "../../images/galaxy.jpg";
+
+function SecondMul() {
+	let data = {
+		mulTestGoal:
+			"2)  Η εξίσωση κίνησης ενός κινητού που κινείται ευθύγραμμα είναι: x = 4 - 3t (SI). Η ταχύτητα του κινητού",
+		mulTestImage: null,
+		mulTestAnswer: "β",
+		arrayOfSelections: [
+			"α) αρχικά είναι σταθερή και στη συνέχεια μειώνεται με ρυθμό 3 m/s, κάθε s.",
+			"β) είναι σταθερή και έχει μέτρο 4 m/s.",
+			"γ) είναι σταθερή και έχει μέτρο 3 m/s.",
+			"δ) αρχικά είναι σταθερή και στη συνέχεια αυξάνεται με ρυθμό 3 m/s, κάθε s.",
+		],
+	};
+	return <MultipleSelection data={data} />;
+}
+
+export default SecondMul;

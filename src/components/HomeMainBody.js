@@ -11,9 +11,9 @@ function HomeMainBody() {
 			<div>
 				<div
 					style={{ backgroundImage: `url(${galaxyImg})` }}
-					className="bgImage"
+					className="bgImage shadowBlock"
 				>
-					<h1>Learn Physics, you will...</h1>
+					<div id="bgImageText">Learn Physics, you will...</div>
 				</div>
 			</div>
 			<LetUsMeet />

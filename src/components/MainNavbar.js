@@ -3,7 +3,7 @@ import "../styles/navbar.css";
 
 function MainNavbar(props) {
 	return (
-		<div id="navbarMain">
+		<div id="navbarMain" className="shadowBlock">
 			<div id="navLeft">
 				<p>Ιδιαίτερα Μαθήματα Φυσικής</p>
 				<p>Γεώργιος Κλεφτόγιαννης MSc</p>
@@ -11,7 +11,7 @@ function MainNavbar(props) {
 			<div id="navRight">
 				<a href="/">Αρχική</a>
 				<a href="/giorgosKleftogiannis">Διδάσκων</a>
-				<a id="navStudy" href="/studyGuide">
+				<a id="navStudy" href="/studyGuideRoute">
 					Εκπαιδευτικό Υλικό
 				</a>
 				<a href="/announcements">Ανακοινώσεις</a>
