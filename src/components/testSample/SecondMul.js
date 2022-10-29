@@ -1,6 +1,5 @@
 import React from "react";
 import MultipleSelection from "../onlineTests/testUI/MultipleSelection";
-import galaxyImg from "../../images/galaxy.jpg";
 
 function SecondMul() {
 	let data = {

@@ -10,7 +10,7 @@ function FirstMul() {
 		mulTestAnswer: "α",
 		arrayOfSelections: ["α) +3 m", "β) -3 m", "γ) +4 m", "δ) -1 m"],
 	};
-	return <MultipleSelection data={data} />;
+	return <MultipleSelection {...data} />;
 }
 
 export default FirstMul;

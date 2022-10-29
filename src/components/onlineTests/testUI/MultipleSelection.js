@@ -1,7 +1,13 @@
 import React, { useState, useEffect } from "react";
 import "./multipleSelection.css";
 
-function MultipleSelection({ data }) {
+function MultipleSelection({
+	mulTestGoal,
+	mulTestImage,
+	mulTestAnswer,
+	arrayOfSelections,
+}) {
+	const [answerSubmited, setAnswerSubmited] = useState(false);
 	const [selectedOption, setSelectedOption] = useState("No selection");
 	const [compBackgroundColor, setCompBackgroundColor] =
 		useState("rgba(0,0,0,0)");
@@ -9,14 +15,14 @@ function MultipleSelection({ data }) {
 
 	function selectOption(lvalue) {
 		console.log(`Selected answer -> ${lvalue}`);
-		data.arrayOfSelections.forEach((element) => {
+		arrayOfSelections.forEach((element) => {
 			if (element[0] == lvalue) {
 				setSelectedOption(element);
 			}
 		});
 	}
 
-	let renderList = data.arrayOfSelections.map((sel) => (
+	let renderList = arrayOfSelections.map((sel) => (
 		<li key={sel[0]} listid={sel[0]} onClick={() => selectOption(sel[0])}>
 			{sel}
 		</li>
@@ -27,8 +33,9 @@ function MultipleSelection({ data }) {
 	}
 
 	function submitSelection() {
-		console.log(`${selectedOption[0]} == ${data.mulTestAnswer}`);
-		if (selectedOption[0] == data.mulTestAnswer) {
+		console.log(`${selectedOption[0]} == ${mulTestAnswer}`);
+		setAnswerSubmited(true);
+		if (selectedOption[0] == mulTestAnswer) {
 			setCompBackgroundColor("lightgreen");
 			setCompBorderColor("green");
 		} else {
@@ -49,48 +56,50 @@ function MultipleSelection({ data }) {
 				border: `5px solid ${compBorderColor}`,
 			}}
 		>
-			<div className="mulTestGoal"> {data.mulTestGoal}</div>
+			<div className="mulTestGoal"> {mulTestGoal}</div>
 			<div className="imageAndOptions">
 				<ul className="mulTestBody">{renderList}</ul>
-				{data.mulTestImage && (
+				{mulTestImage && (
 					<img
 						className="mulTestImage"
-						src={data.mulTestImage}
+						src={mulTestImage}
 						style={{ width: "50%" }}
 					></img>
 				)}
 			</div>
-			<div
-				style={{
-					display: "flex",
-					flexFlow: "column",
-					flexBasis: "33%",
-					gap: "2vh",
-				}}
-			>
-				<div> {selectedOption}</div>
+			{!answerSubmited && (
 				<div
 					style={{
 						display: "flex",
-						flexFlow: "row",
-						justifyContent: "space-around",
-						width: "100%",
-						margin: "auto",
-						gap: "1vw",
+						flexFlow: "column",
+						flexBasis: "33%",
+						gap: "2vh",
 					}}
 				>
-					<button style={{ width: "25%" }} onClick={submitSelection}>
-						Submit
-					</button>
-					<button
-						className="clearSelection"
-						style={{ width: "25%" }}
-						onClick={clearSelection}
+					<div className="selectedOptionDiv"> {selectedOption}</div>
+					<div
+						style={{
+							display: "flex",
+							flexFlow: "row",
+							justifyContent: "space-around",
+							width: "100%",
+							margin: "auto",
+							gap: "1vw",
+						}}
 					>
-						Clear
-					</button>
+						<button style={{ width: "25%" }} onClick={submitSelection}>
+							Submit
+						</button>
+						<button
+							className="clearSelection"
+							style={{ width: "25%" }}
+							onClick={clearSelection}
+						>
+							Clear
+						</button>
+					</div>
 				</div>
-			</div>
+			)}
 		</div>
 	);
 }

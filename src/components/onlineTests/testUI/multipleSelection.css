@@ -42,3 +42,12 @@ li:hover {
   color: darkolivegreen;
   border: 3px solid darkolivegreen;
 }
+
+.selectedOptionDiv {
+  background-color: whitesmoke;
+  color: darkolivegreen;
+  border: 3px solid darkolivegreen;
+  width: 150px;
+  text-align: center;
+  padding: 10px;
+}
