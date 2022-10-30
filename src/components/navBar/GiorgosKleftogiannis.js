@@ -1,4 +1,5 @@
 import React from "react";
+import TestSection from "../onlineTests/testSection/TestSection";
 import MainNavbar from "./MainNavbar";
 
 function GiorgosKleftogiannis() {
@@ -7,6 +8,7 @@ function GiorgosKleftogiannis() {
 			<MainNavbar />
 
 			<div>GiorgosKleftogiannis</div>
+			<TestSection />
 		</>
 	);
 }
