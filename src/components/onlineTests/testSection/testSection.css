@@ -1,0 +1,35 @@
+.testSectionClass {
+  border-radius: 1vw;
+  border: 3px solid olivedrab;
+}
+
+.testSectionHeader {
+  display: flex;
+  flex-flow: row wrap;
+  height: 3rem;
+  background-color: olivedrab;
+  border-top-left-radius: 0.5vw;
+  border-top-right-radius: 0.5vw;
+  color: aliceblue;
+  font-size: 1.5rem;
+}
+
+.testSectionHeader>div {
+  width: 33%;
+  text-align: center;
+}
+
+
+
+
+
+
+.testSectionFooter {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+}
+
+.testSectionFooter>button {
+  margin: auto;
+}

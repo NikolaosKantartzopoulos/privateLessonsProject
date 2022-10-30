@@ -1,15 +1,21 @@
 import React, { useState, useEffect } from "react";
 import "./textInput.css";
 
-function textInput({ testGoal, testImage, testAnswer }) {
+function textInput({
+	testGoal,
+	testImage,
+	testAnswer,
+	completionPoints = 0,
+	updatePointTotal,
+}) {
 	/***********************************************
 Declare state and get complete answer
 **********************************************/
 	const [answerSubmited, setAnswerSubmited] = useState(false);
 	const [compBackgroundColor, setCompBackgroundColor] =
 		useState("rgba(0,0,0,0)");
-	const [compBorderColor, setCompBorderColor] = useState("darkloivegreen");
-	const [userInput, setUserInput] = useState("");
+	const [compBorderColor, setCompBorderColor] = useState("olivedrab");
+	const [userInput, setUserInput] = useState("Answer...");
 
 	/* **********************************************
 **********************************************
@@ -35,6 +41,7 @@ Declare state and get complete answer
 		if (testAnswer == userInput) {
 			setCompBackgroundColor("lightgreen");
 			setCompBorderColor("green");
+			updatePointTotal(completionPoints);
 		} else {
 			setCompBackgroundColor("coral");
 			setCompBorderColor("red");
@@ -57,10 +64,19 @@ RETURN
 			style={{
 				backgroundColor: `${compBackgroundColor}`,
 				border: `5px solid ${compBorderColor}`,
+				position: "relative",
 			}}
 		>
+			{/**************** SCORE BOARD ****************/}
+			<div
+				className="scoreBoard"
+				style={{ border: `5px solid ${compBorderColor}` }}
+			>
+				{completionPoints}
+			</div>
+			{/**************** SCORE BOARD ****************/}
 			{/****************EXERCISE'S GOAL****************/}
-			<div className="mulTestGoal"> {testGoal}</div>
+			<div className="testGoal"> {testGoal}</div>
 			{/****************EXERCISE'S GOAL****************/}
 			{/****************IMAGE AND OPTIONS****************/}
 			<div className="imageAndOptions">
@@ -88,6 +104,11 @@ RETURN
 						type="text"
 						value={userInput}
 						onChange={handleChange}
+						onClick={() => {
+							if (userInput == "Answer...") {
+								setUserInput("");
+							}
+						}}
 						className="selectedOptionDiv"
 						style={{
 							backgroundColor: `${compBackgroundColor}`,

@@ -4,10 +4,10 @@ import galaxyImg from "./exercise1Image.png";
 
 function FirstMul() {
 	let data = {
-		mulTestGoal:
+		testGoal:
 			"1) Σώμα μετακινείται από τη θέση Σ1 στη θέση Σ2 του παρακάτω σχήματος. Η μετατόπιση του κινητού είναι:",
-		mulTestImage: galaxyImg,
-		mulTestAnswer: "α",
+		testImage: galaxyImg,
+		testAnswer: "α",
 		arrayOfSelections: ["α) +3 m", "β) -3 m", "γ) +4 m", "δ) -1 m"],
 	};
 	return <MultipleSelection {...data} />;

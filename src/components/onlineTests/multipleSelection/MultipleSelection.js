@@ -2,10 +2,12 @@ import React, { useState, useEffect } from "react";
 import "./multipleSelection.css";
 
 function MultipleSelection({
-	mulTestGoal,
-	mulTestImage,
-	mulTestAnswer,
+	testGoal,
+	testImage,
+	testAnswer,
 	arrayOfSelections,
+	completionPoints = null,
+	updatePointTotal,
 }) {
 	/***********************************************
 Declare state and get complete answer
@@ -14,12 +16,11 @@ Declare state and get complete answer
 	const [selectedOption, setSelectedOption] = useState("");
 	const [compBackgroundColor, setCompBackgroundColor] =
 		useState("rgba(0,0,0,0)");
-	const [compBorderColor, setCompBorderColor] = useState("rgba(0,0,0,0)");
+	const [compBorderColor, setCompBorderColor] = useState("olivedrab");
 
 	let completeAnswer;
 	arrayOfSelections.forEach((sel) => {
-		if (sel[0] == mulTestAnswer) {
-			console.log(sel);
+		if (sel[0] == testAnswer) {
 			completeAnswer = sel;
 		}
 		return null;
@@ -32,7 +33,6 @@ Declare state and get complete answer
 **********************************************/
 
 	function selectOption(lvalue) {
-		console.log(`Selected answer -> ${lvalue}`);
 		arrayOfSelections.forEach((element) => {
 			if (element[0] == lvalue) {
 				setSelectedOption(element);
@@ -80,9 +80,10 @@ Declare state and get complete answer
 	/************************************************************** */
 	function submitSelection() {
 		setAnswerSubmited(true);
-		if (selectedOption[0] == mulTestAnswer) {
+		if (selectedOption[0] == testAnswer) {
 			setCompBackgroundColor("lightgreen");
 			setCompBorderColor("green");
+			updatePointTotal(completionPoints);
 		} else {
 			setCompBackgroundColor("coral");
 			setCompBorderColor("red");
@@ -115,20 +116,29 @@ RETURN
 			style={{
 				backgroundColor: `${compBackgroundColor}`,
 				border: `5px solid ${compBorderColor}`,
+				position: "relative",
 			}}
 		>
+			{/**************** SCORE BOARD ****************/}
+			<div
+				className="scoreBoard"
+				style={{ border: `5px solid ${compBorderColor}` }}
+			>
+				{completionPoints}
+			</div>
+			{/**************** SCORE BOARD ****************/}
 			{/****************EXERCISE'S GOAL****************/}
-			<div className="mulTestGoal"> {mulTestGoal}</div>
+			<div className="testGoal"> {testGoal}</div>
 			{/****************EXERCISE'S GOAL****************/}
 			{/****************IMAGE AND OPTIONS****************/}
 			<div className="imageAndOptions">
 				{!answerSubmited && (
-					<ul className="mulTestBody">{renderList(selectedOption)}</ul>
+					<ul className="testBody">{renderList(selectedOption)}</ul>
 				)}
-				{mulTestImage && (
+				{testImage && (
 					<img
-						className="mulTestImage"
-						src={mulTestImage}
+						className="testImage"
+						src={testImage}
 						style={{ width: "50%" }}
 					></img>
 				)}

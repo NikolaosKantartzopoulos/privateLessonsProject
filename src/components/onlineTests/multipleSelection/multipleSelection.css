@@ -1,4 +1,4 @@
-.mulTestImage {
+.testImage {
   width: 15vh;
   height: 15vh;
 }
@@ -15,7 +15,7 @@
   margin: 20px;
 }
 
-.mulTestGoal {
+.testGoal {
   font-size: 1.25rem;
   color: darkolivegreen;
 }

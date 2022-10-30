@@ -1,7 +1,11 @@
 import React, { useState, useEffect } from "react";
+import MultipleSelection from "../multipleSelection/MultipleSelection";
+import TextInput from "../textInputOnlineTest/TextInput";
+import "./testSection.css";
+import galaxyImg from "../../../images/galaxy.jpg";
 
 function TestSection() {
-	const [pointsGathered, setPointsGathered] = useState(20);
+	const [pointsGathered, setPointsGathered] = useState(40);
 	const [testSubmited, setTestSubmited] = useState(false);
 	const [testPassed, setTestPassed] = useState(null);
 	const [testSectionBackgroundColor, setTestSectionBackgroundColor] =
@@ -11,8 +15,17 @@ function TestSection() {
 	let testSectionName = "Sample Test Name";
 	let maximumPoints = 100;
 
+	/* **********************************************
+**********************************************
+		FUNCTIONS
+**********************************************
+**********************************************/
+
+	function updatePointTotal(pointsAdded) {
+		setPointsGathered(pointsGathered + pointsAdded);
+	}
+
 	function getTestRank() {
-		console.log(pointsGathered);
 		if (pointsGathered < 50) {
 			setRank("FAIL");
 		} else if (pointsGathered < 65) {
@@ -26,38 +39,70 @@ function TestSection() {
 
 	function submitTest() {
 		getTestRank();
-		console.log(rank);
+
 		rank != "FAIL" ? setTestPassed(true) : setTestPassed(false);
 		setTestSubmited(true);
 	}
-
+	/* **********************************************
+**********************************************
+USE EFFECT
+**********************************************
+**********************************************/
 	useEffect(() => {
 		getTestRank();
 		if (testPassed === null) setTestSectionBackgroundColor("white");
 		else if (testPassed) setTestSectionBackgroundColor("lightgreen");
 		else setTestSectionBackgroundColor("coral");
-		return () => {
-			console.log(rank);
-		};
-	}, [testSubmited, rank]);
-
+		return () => {};
+	}, [testSubmited, rank, pointsGathered]);
+	/* **********************************************
+**********************************************
+RETURN
+**********************************************
+**********************************************/
 	return (
-		<div style={{ backgroundColor: `${testSectionBackgroundColor}` }}>
+		<div
+			className="testSectionClass"
+			style={{ backgroundColor: `${testSectionBackgroundColor}` }}
+		>
 			<div className="testSectionHeader">
 				<div>{testSectionName}</div>
 				<div>{pointsGathered}/100</div>
+				{!testSubmited && <div></div>}
 				{testSubmited && <div>Rank: {rank}</div>}
 			</div>
-			<hr />
+
 			<div className="testSectionBody">
-				<br />
-				Exercise 1 <br />
-				<br />
-				Exercise 1 <br />
-				<br />
-				Exercise 1 <br />
+				<MultipleSelection
+					{...{
+						testGoal: "Press a) 1",
+						testImage: null,
+						testAnswer: "a",
+						arrayOfSelections: ["a) 1", "b) 2"],
+						completionPoints: 15,
+						updatePointTotal,
+					}}
+				/>
+				<TextInput
+					{...{
+						testGoal: "What is the best class in D&D? (Answer: Paladin)",
+						testImage: null,
+						testAnswer: "Paladin",
+						completionPoints: 20,
+						updatePointTotal,
+					}}
+				/>
+				<TextInput
+					{...{
+						testGoal: "This is an image of a... (Answer: Galaxy)",
+						testImage: galaxyImg,
+						testAnswer: "Galaxy",
+						completionPoints: 25,
+						updatePointTotal,
+					}}
+				/>
 			</div>
-			<hr />
+
 			<div className="testSectionFooter">
 				<button onClick={submitTest}>Submit Test</button>
 			</div>
