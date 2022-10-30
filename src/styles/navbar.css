@@ -44,7 +44,18 @@ a:nth-child(3) {
   grid-column-end: 5;
 }
 
+#navStudy {
+  position: relative;
+}
 
+#studyDropdown {
+  position: absolute;
+  top: 2.5rem;
+  width: 100%;
+  left: 0;
+
+
+}
 
 @media screen and (max-width: 600px) {
   #navRight {

@@ -1,18 +1,13 @@
 import React from "react";
 import MainNavbar from "./MainNavbar";
 import StudyGuide from "./../StudyGuide";
-import FirstMul from "./../testSample/FirstMul";
-import SecondMul from "./../testSample/SecondMul";
-import FirstText from "./../testSample/FirstText";
+import TestSection from "../onlineTests/testSection/TestSection";
 
 function StudyGuideRoute() {
 	return (
 		<>
 			<MainNavbar />
 			<StudyGuide />
-			<FirstText />
-			<FirstMul />
-			<SecondMul />
 		</>
 	);
 }

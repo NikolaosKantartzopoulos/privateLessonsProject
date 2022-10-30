@@ -11,10 +11,10 @@ function Contact() {
 			<div id="contactBlock">
 				<img src={emailImg} />
 				<p>Email</p>
-				<p>kleftis@mail.com</p>
+				<p>professor@mail.com</p>
 				<img src={phoneImg} />
-				<p>Τηλέφωνο</p>
-				<p>6999 999 999 </p>
+				<p>tel</p>
+				<p>9999 999 999 </p>
 			</div>
 		</>
 	);

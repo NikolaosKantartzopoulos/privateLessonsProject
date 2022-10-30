@@ -5,7 +5,7 @@ import "./testSection.css";
 import galaxyImg from "../../../images/galaxy.jpg";
 
 function TestSection() {
-	const [pointsGathered, setPointsGathered] = useState(40);
+	const [pointsGathered, setPointsGathered] = useState(0);
 	const [testSubmited, setTestSubmited] = useState(false);
 	const [testPassed, setTestPassed] = useState(null);
 	const [testSectionBackgroundColor, setTestSectionBackgroundColor] =
@@ -75,19 +75,25 @@ RETURN
 			<div className="testSectionBody">
 				<MultipleSelection
 					{...{
-						testGoal: "Press a) 1",
+						testGoal:
+							"Select a) Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
 						testImage: null,
 						testAnswer: "a",
-						arrayOfSelections: ["a) 1", "b) 2"],
+						arrayOfSelections: [
+							"a) Lorem ipsum dolor sit amet, consectetur adipiscing elit. ",
+							"b) Curabitur odio leo, ultrices tincidunt dictum eleifend",
+							"c) Nulla varius nisl elit, eget molestie nulla convallis vel. ",
+						],
 						completionPoints: 15,
 						updatePointTotal,
 					}}
 				/>
 				<TextInput
 					{...{
-						testGoal: "What is the best class in D&D? (Answer: Paladin)",
+						testGoal:
+							"This is an example of a text input component? (Answer: text)",
 						testImage: null,
-						testAnswer: "Paladin",
+						testAnswer: "text",
 						completionPoints: 20,
 						updatePointTotal,
 					}}
@@ -102,6 +108,21 @@ RETURN
 					}}
 				/>
 			</div>
+			<MultipleSelection
+				{...{
+					testGoal:
+						"Select a) Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+					testImage: null,
+					testAnswer: "a",
+					arrayOfSelections: [
+						"a) Lorem ipsum dolor sit amet, consectetur adipiscing elit. ",
+						"b) Curabitur odio leo, ultrices tincidunt dictum eleifend",
+						"c) Nulla varius nisl elit, eget molestie nulla convallis vel. ",
+					],
+					completionPoints: 40,
+					updatePointTotal,
+				}}
+			/>
 
 			<div className="testSectionFooter">
 				<button onClick={submitTest}>Submit Test</button>
