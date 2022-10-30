@@ -1,10 +1,10 @@
 import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import App from "./App";
-import StudyGuideRoute from "./components/StudyGuideRoute";
-import Announcements from "./components/Announcements";
-import GiorgosKleftogiannis from "./components/GiorgosKleftogiannis";
-import Contact from "./components/Contact";
+import StudyGuideRoute from "./components/navBar/StudyGuideRoute";
+import Announcements from "./components/navBar/Announcements";
+import GiorgosKleftogiannis from "./components/navBar/GiorgosKleftogiannis";
+import Contact from "./components/navBar/Contact";
 
 const RouteSwitch = () => {
 	return (

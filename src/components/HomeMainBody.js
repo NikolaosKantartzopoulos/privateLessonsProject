@@ -1,8 +1,8 @@
 import React from "react";
 import galaxyImg from "../images/galaxy.jpg";
-import LetUsMeet from "./LetUsMeet";
+import LetUsMeet from "./navBar/LetUsMeet";
 import StudyGuide from "./StudyGuide";
-import LessonMethods from "./LessonMethods";
+import LessonMethods from "./navBar/LessonMethods";
 import "../styles/homeMainBody.css";
 
 function HomeMainBody() {

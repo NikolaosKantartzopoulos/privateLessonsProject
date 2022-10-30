@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-import geoImage from "../images/geoKleft.png";
+import geoImage from "../../images/geoKleft.png";
 
 function LetUsMeet() {
 	return (

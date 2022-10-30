@@ -1,8 +1,8 @@
 import React from "react";
 import MainNavbar from "./MainNavbar";
-import "../styles/contact.css";
-import phoneImg from "../images/phone.png";
-import emailImg from "../images/email.png";
+import "../../styles/contact.css";
+import phoneImg from "../../images/phone.png";
+import emailImg from "../../images/email.png";
 
 function Contact() {
 	return (

@@ -1,12 +1,12 @@
 import React from "react";
-import MultipleSelection from "../onlineTests/testUI/MultipleSelection";
+import MultipleSelection from "../onlineTests/multipleSelection/MultipleSelection";
 
 function SecondMul() {
 	let data = {
 		mulTestGoal:
 			"2)  Η εξίσωση κίνησης ενός κινητού που κινείται ευθύγραμμα είναι: x = 4 - 3t (SI). Η ταχύτητα του κινητού",
 		mulTestImage: null,
-		mulTestAnswer: "β",
+		mulTestAnswer: "α",
 		arrayOfSelections: [
 			"α) αρχικά είναι σταθερή και στη συνέχεια μειώνεται με ρυθμό 3 m/s, κάθε s.",
 			"β) είναι σταθερή και έχει μέτρο 4 m/s.",

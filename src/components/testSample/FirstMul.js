@@ -1,5 +1,5 @@
 import React from "react";
-import MultipleSelection from "../onlineTests/testUI/MultipleSelection";
+import MultipleSelection from "../onlineTests/multipleSelection/MultipleSelection";
 import galaxyImg from "./exercise1Image.png";
 
 function FirstMul() {

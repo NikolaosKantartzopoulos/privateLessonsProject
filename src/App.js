@@ -1,7 +1,6 @@
 import React, { Component } from "react";
-import MainNavbar from "./components/MainNavbar";
+import MainNavbar from "./components/navBar/MainNavbar";
 import HomeMainBody from "./components/HomeMainBody";
-import cog from "./images/cog.png";
 
 class App extends Component {
 	render() {

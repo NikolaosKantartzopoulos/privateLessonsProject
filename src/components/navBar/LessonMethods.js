@@ -1,5 +1,5 @@
 import React from "react";
-import methodsImg from "../images/methods.jpeg";
+import methodsImg from "../../images/methods.jpeg";
 
 function LessonMethods() {
 	return (
