@@ -102,7 +102,7 @@ USE EFFECT
 
 	useEffect(() => {
 		renderList(selectedOption);
-	}, [selectedOption]);
+	}, [selectedOption, compBackgroundColor]);
 
 	/* **********************************************
 **********************************************

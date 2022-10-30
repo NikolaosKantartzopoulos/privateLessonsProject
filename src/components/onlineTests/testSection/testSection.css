@@ -15,10 +15,17 @@
 }
 
 .testSectionHeader>div {
-  width: 33%;
   text-align: center;
 }
 
+.testSectionHeader>div:nth-child(1) {
+  width: 50%;
+}
+
+.testSectionHeader>div:nth-child(2),
+.testSectionHeader>div:nth-child(3) {
+  width: 25%
+}
 
 
 
