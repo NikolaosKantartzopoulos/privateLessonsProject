@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "homepage": "https://NikolaosKantartzopoulos.github.io/react-gh-pages",
+  "homepage": "https://NikolaosKantartzopoulos.github.io/privateLessonsProject",
   "scripts": {
     "dev": "webpack-dev-server --mode development",
     "build": "webpack --mode production",
