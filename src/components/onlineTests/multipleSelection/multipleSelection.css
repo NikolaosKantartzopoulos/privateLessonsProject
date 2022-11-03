@@ -30,7 +30,7 @@
 
 }
 
-li {
+.testBody>li {
   cursor: pointer;
   padding: 0.3rem;
   border: 3px solid rgba(200, 200, 200, 0);
@@ -38,7 +38,7 @@ li {
   margin: 10px;
 }
 
-li:hover {
+.testBody>li:hover {
   background-color: whitesmoke;
   color: darkolivegreen;
   border: 3px solid darkolivegreen;

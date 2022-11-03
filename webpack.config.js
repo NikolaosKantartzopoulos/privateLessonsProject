@@ -1,6 +1,5 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
-const FaviconsWebpackPlugin = require("favicons-webpack-plugin");
 
 module.exports = {
 	mode: "development",
@@ -8,7 +7,6 @@ module.exports = {
 	output: {
 		path: path.resolve(__dirname, "./dist"),
 		filename: "bundle.js",
-		publicPath: "/",
 	},
 	module: {
 		rules: [
@@ -41,9 +39,6 @@ module.exports = {
 		new HtmlWebpackPlugin({
 			template: path.resolve(__dirname, "./src/index.html"),
 		}),
-		new FaviconsWebpackPlugin({
-			logo: "./src/images/atom.png",
-		}),
 	],
 	devServer: {
 		static: {
@@ -52,6 +47,5 @@ module.exports = {
 		hot: true,
 		open: true,
 		port: 9000,
-		historyApiFallback: true,
 	},
 };

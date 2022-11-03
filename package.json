@@ -1,5 +1,5 @@
 {
-  "name": "privateLessonsProject",
+  "name": "privatelessons",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -15,8 +15,7 @@
   "license": "ISC",
   "dependencies": {
     "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "react-router-dom": "^6.4.2"
+    "react-dom": "^18.2.0"
   },
   "devDependencies": {
     "@babel/core": "^7.19.3",

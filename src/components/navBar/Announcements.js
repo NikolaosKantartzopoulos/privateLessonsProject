@@ -4,7 +4,6 @@ import MainNavbar from "./MainNavbar";
 function Announcements() {
 	return (
 		<>
-			<MainNavbar />
 			<div>Announcements</div>
 		</>
 	);

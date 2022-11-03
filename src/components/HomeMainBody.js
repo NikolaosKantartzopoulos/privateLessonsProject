@@ -8,14 +8,13 @@ import "../styles/homeMainBody.css";
 function HomeMainBody() {
 	return (
 		<React.Fragment>
-			<div>
-				<div
-					style={{ backgroundImage: `url(${galaxyImg})` }}
-					className="bgImage shadowBlock"
-				>
-					<div id="bgImageText">Learn Physics, you will...</div>
-				</div>
+			<div
+				style={{ backgroundImage: `url(${galaxyImg})` }}
+				className="bgImage shadowBlock"
+			>
+				<div id="bgImageText">Learn Physics, you will...</div>
 			</div>
+
 			<LetUsMeet />
 			<StudyGuide />
 			<LessonMethods />

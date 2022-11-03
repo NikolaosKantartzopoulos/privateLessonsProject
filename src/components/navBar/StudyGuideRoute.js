@@ -6,7 +6,6 @@ import TestSection from "../onlineTests/testSection/TestSection";
 function StudyGuideRoute() {
 	return (
 		<>
-			<MainNavbar />
 			<StudyGuide />
 		</>
 	);
