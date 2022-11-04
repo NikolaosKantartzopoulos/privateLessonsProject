@@ -64,20 +64,21 @@ RETURN
 			style={{
 				backgroundColor: `${compBackgroundColor}`,
 				border: `5px solid ${compBorderColor}`,
-				position: "relative",
 			}}
 		>
-			{/**************** SCORE BOARD ****************/}
-			<div
-				className="scoreBoard"
-				style={{ border: `5px solid ${compBorderColor}` }}
-			>
-				{completionPoints}
+			<div class="multipleSelectionHeader">
+				{/****************EXERCISE'S GOAL****************/}
+				<div className="testGoal"> {testGoal}</div>
+				{/****************EXERCISE'S GOAL****************/}
+				{/**************** SCORE BOARD ****************/}
+				<div
+					className="scoreBoard"
+					style={{ border: `5px solid ${compBorderColor}` }}
+				>
+					{completionPoints}
+				</div>
+				{/**************** SCORE BOARD ****************/}
 			</div>
-			{/**************** SCORE BOARD ****************/}
-			{/****************EXERCISE'S GOAL****************/}
-			<div className="testGoal"> {testGoal}</div>
-			{/****************EXERCISE'S GOAL****************/}
 			{/****************IMAGE AND OPTIONS****************/}
 			<div className="imageAndOptions">
 				{testImage && (

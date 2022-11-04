@@ -15,9 +15,18 @@
   margin: 20px;
 }
 
+.multipleSelectionHeader {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+}
+
 .testGoal {
   font-size: 1.25rem;
   color: darkolivegreen;
+  display: flex;
+  flex-flow: row wrap;
+  width: 80%;
 }
 
 .imageAndOptions {
@@ -51,7 +60,7 @@
   border: 3px solid darkolivegreen;
   border-radius: 1vw;
   min-width: 200px;
-  height: 3rem;
+
   text-align: center;
   padding: 10px;
 }

@@ -54,6 +54,13 @@ button:active {
   font-size: 1.2rem;
 }
 
+@media screen and (max-width: 600px) {
+  .tabUl {
+    grid-template-columns: repeat(2, 1fr);
+    height: 6rem;
+
+  }
+}
 
 
 .tabLi {

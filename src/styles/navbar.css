@@ -13,6 +13,17 @@
   width: 20%;
   display: grid;
 
+
+}
+
+@media only screen and (max-width: 600px) {
+  #navbarMain {
+    justify-content: space-around;
+  }
+
+  #navLeft {
+    display: none;
+  }
 }
 
 #navRight {
