@@ -1,6 +1,18 @@
-# React base setup
+### Private lessons sample Page
 
-* React
-* Babel
-* Webpack
-* TailwindCSS
+### Project's objective
+
+- Use React to create:
+  - Animated buttons
+  - A working navbar with pseudotabs
+  - Dropdown menus
+  - An online test which calculates the sum of points and declares a final rank
+
+### Built using
+
+- React
+- Webpack
+
+### See it live!
+
+https://nikolaoskantartzopoulos.github.io/privateLessonsProject/
