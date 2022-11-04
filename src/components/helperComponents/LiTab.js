@@ -29,7 +29,7 @@ function LiTab(props) {
 					className="tabLi"
 					onClick={() => props.setActiveTab(props.tabName)}
 					style={{
-						backgroundColor: "#333",
+						backgroundColor: "purple",
 						border: "1px solid white",
 					}}
 					onMouseEnter={handleMouseIn}
