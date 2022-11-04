@@ -19,7 +19,7 @@ function MainNavbar(props) {
 					dropdownContent={"Dummy Content"}
 				/>
 				<LiTab
-					tabName="Biography"
+					tabName="About"
 					activeTab={activeTab}
 					setActiveTab={setActiveTab}
 				/>
