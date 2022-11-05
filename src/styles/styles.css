@@ -104,6 +104,7 @@ button:active {
   z-index: 10;
   padding: 2rem;
   width: 10rem;
+  border: 0.25rem double black
 }
 
 .dropdown:hover {

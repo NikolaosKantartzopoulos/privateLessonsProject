@@ -3,7 +3,7 @@
   flex-flow: row wrap;
   background: black;
   color: white;
-  padding: 2vw;
+  padding: 1vw;
   justify-content: flex-start;
   align-items: center;
   margin-bottom: 1vh;
@@ -12,7 +12,7 @@
 #navLeft {
   width: 20%;
   display: grid;
-
+  margin: 1vw;
 
 }
 
@@ -27,6 +27,14 @@
 }
 
 #navRight {
-  width: 80%;
+  width: 60%;
 
+}
+
+.navAccount {
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-content: space-around;
+  align-items: center;
 }

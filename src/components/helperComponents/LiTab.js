@@ -41,7 +41,6 @@ function LiTab(props) {
 							className="dropdown"
 							style={{
 								opacity: opaque,
-								border: "0.25rem double black",
 								pointerEvents: pointEv,
 								transform: transState,
 							}}
@@ -65,7 +64,7 @@ function LiTab(props) {
 							className="dropdown"
 							style={{
 								opacity: opaque,
-								border: "0.25rem double black",
+
 								pointerEvents: pointEv,
 								transform: transState,
 							}}
