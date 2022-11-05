@@ -20,6 +20,7 @@ function App() {
 				{activeTab == "About" && <LetUsMeet />}
 				{/* {activeTab == "Professor" && <Professor />} */}
 				{activeTab == "Study Guide" && <StudyGuideRoute />}
+				{activeTab == "Account" && <StudyGuideRoute />}
 			</div>
 		</React.Fragment>
 	);

@@ -16,26 +16,28 @@
 
 
 button {
-  border: 4px solid #3b3a30;
-  background-color: #c5d5c5;
+  border: 4px solid purple;
+  background-color: white;
+  color: purple;
   padding: 1vw;
   border-radius: 1vw;
-  color: #3b3a30;
   transition: all 0.5s;
+  margin: 0.3rem;
+  padding: 0.2rem 1rem;
 }
 
 button:hover {
-  border: 4px solid #c5d5c5;
-  background-color: #3b3a30;
-  color: #c5d5c5;
+  border: 4px solid white;
+  background-color: purple;
+  color: white;
   transition: all 0.7s;
 }
 
 button:focus,
 button:active {
-  border: 4px solid #3b3a30;
-  background-color: #c5d5c5;
-  color: #3b3a30;
+  border: 4px solid purple;
+  background-color: white;
+  color: purple;
 
 }
 
@@ -54,7 +56,7 @@ button:active {
   font-size: 1.2rem;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 720px) {
   .tabUl {
     grid-template-columns: repeat(2, 1fr);
     height: 6rem;
@@ -70,6 +72,7 @@ button:active {
   cursor: pointer;
   transition: all 0.5s;
   border-radius: 5px;
+  border: 1px solid rgba(0, 0, 0, 0);
   text-align: center;
   position: relative;
   box-shadow: inset 0 0 0 0 purple;
@@ -110,4 +113,20 @@ button:active {
 .dropdown:hover {
   letter-spacing: 3px;
   user-select: none;
+}
+
+input {
+  transition: all .5;
+  border: 3px solid black;
+  border-radius: 10px;
+  outline: none;
+  box-shadow: 0 0 0 darkmagenta, inset 0 0 0 darkmagenta;
+  padding-left: 10px;
+  padding-top: 0.3rem;
+}
+
+input:focus {
+  transition: all .5;
+  border: 3px solid purple;
+  box-shadow: 0 0 5px darkmagenta, 0 0 5px darkmagenta;
 }

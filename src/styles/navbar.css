@@ -16,15 +16,7 @@
 
 }
 
-@media only screen and (max-width: 600px) {
-  #navbarMain {
-    justify-content: space-around;
-  }
 
-  #navLeft {
-    display: none;
-  }
-}
 
 #navRight {
   width: 60%;
@@ -33,8 +25,92 @@
 
 .navAccount {
 
+  display: flex;
+  /* grid-template-columns: 1fr 1fr; */
+  justify-content: flex-end;
+  margin-right: 10px;
+  align-items: center;
+  gap: 10px
+}
+
+.loginMainDivStyle {
+  position: relative;
+}
+
+.loginDropdown {
+  background-color: white;
+  color: black;
+  box-shadow: 2px 5px 15px black;
+  border-radius: 3px;
+  position: absolute;
+  top: 3rem;
+  right: 0;
+  opacity: 0;
+  transition: all 0.5s ease-in-out;
+  z-index: 10;
+  padding: 2rem;
+  border: 0.25rem double black;
+  pointer-events: none;
+  transform: translateX(20px);
+}
+
+.loginDropdownShow {
+  background-color: white;
+  color: black;
+  box-shadow: 2px 5px 15px black;
+  border-radius: 3px;
+  position: absolute;
+  top: 3rem;
+  right: 0;
+  opacity: 1;
+  transition: all 0.5s ease-in-out;
+  z-index: 10;
+  padding: 2rem;
+
+  border: 0.25rem double black;
+  pointer-events: all;
+  transform: translateX(0px);
+}
+
+.loginDropdown:hover {
+  letter-spacing: 3px;
+  user-select: none;
+  opacity: 1;
+}
+
+.loginSubscribeButtons {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr;
+}
+
+.subscribeScreenDiv h1 {
+  color: purple
+}
+
+.subscribeScreenDiv p {
+  color: red;
+}
+
+.loginHeaderDiv {
+  display: flex;
+  flex-flow: row wrap;
   justify-content: space-around;
   align-items: center;
+
+}
+
+.loginHeaderDiv h1 {
+  font-size: 1.2rem;
+  color: purple
+}
+
+@media only screen and (max-width: 720px) {
+  #navbarMain {
+    justify-content: space-between;
+  }
+
+  #navLeft {
+    display: none;
+  }
+
 }

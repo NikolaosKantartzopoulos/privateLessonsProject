@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import LiTab from "../helperComponents/LiTab";
 import "../../styles/navbar.css";
-import Login from "./Login";
-import Settings from "./Settings";
+import Login from "./settingsAndAccount/Login";
+import Settings from "./settingsAndAccount/Settings";
 
 function MainNavbar(props) {
 	let { activeTab, setActiveTab } = props;
@@ -19,16 +19,19 @@ function MainNavbar(props) {
 					setActiveTab={setActiveTab}
 					hasDropdown={true}
 					dropdownContent={"Dummy Content"}
+					tabDescriptionShow={true}
 				/>
 				<LiTab
 					tabName="About"
 					activeTab={activeTab}
 					setActiveTab={setActiveTab}
+					tabDescriptionShow={true}
 				/>
 				<LiTab
 					tabName="Online Test"
 					activeTab={activeTab}
 					setActiveTab={setActiveTab}
+					tabDescriptionShow={true}
 				/>
 				<LiTab
 					tabName="Study Guide"
@@ -36,8 +39,10 @@ function MainNavbar(props) {
 					setActiveTab={setActiveTab}
 					hasDropdown={true}
 					dropdownContent={"Dummy Content"}
+					tabDescriptionShow={true}
 				/>
 			</ul>
+
 			<div className="navAccount">
 				<Settings />
 				<Login />
