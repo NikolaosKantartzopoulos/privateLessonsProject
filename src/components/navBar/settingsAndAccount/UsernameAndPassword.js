@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import LoginScreen from "./LoginScreen";
 import SubscribeScreen from "./SubscribeScreen";
 
@@ -6,8 +6,28 @@ function UsernameAndPassword() {
 	const [emailValue, setEmailValue] = useState("");
 	const [usernameValue, setUsernameValue] = useState("");
 	const [passwordValue, setPasswordValue] = useState("");
-	const [isUserLoggedin, setIsUserLoggedin] = useState(true);
+	const [isUserLoggedin, setIsUserLoggedin] = useState(false);
 	const [showLoginScreen, setShowLoginScreen] = useState(true);
+	const [formIsValid, setFormIsValid] = useState("false");
+
+	useEffect(() => {
+		const storedUserLoggedInInformation = localStorage.getItem("isLoggedIn");
+
+		if (storedUserLoggedInInformation === "1") {
+			setIsUserLoggedin(true);
+		}
+	}, []);
+
+	useEffect(() => {
+		const identifier = setTimeout(() => {
+			console.log("checking validity");
+			setFormIsValid(passwordValue.length > 4 && usernameValue.length > 4);
+		}, 500);
+		return () => {
+			console.log("Cleanup");
+			clearTimeout(identifier);
+		};
+	}, [passwordValue, usernameValue]);
 
 	function handleEmailChange(event) {
 		setEmailValue(event.target.value);
@@ -18,8 +38,24 @@ function UsernameAndPassword() {
 	function handlePasswordChange(event) {
 		setPasswordValue(event.target.value);
 	}
-	function handleNewSubscription(event) {
+
+	function handleLogin(event) {
 		event.preventDefault();
+
+		if (usernameValue.length > 5) {
+			localStorage.setItem("isLoggedIn", "1");
+			setIsUserLoggedin(true);
+		}
+	}
+
+	function handleLogout() {
+		localStorage.removeItem("isLoggedIn");
+		setIsUserLoggedin(false);
+	}
+
+	async function handleNewSubscription(event) {
+		event.preventDefault();
+		//  function postData(url = 'https://privatelessons-3387a-default-rtdb.europe-west1.firebasedatabase.app/', data = {}) {
 	}
 
 	function submitLoginInformation(event) {
@@ -30,7 +66,8 @@ function UsernameAndPassword() {
 	return (
 		<>
 			<div className="loginHeaderDiv">
-				{showLoginScreen && (
+				{isUserLoggedin && <button onClick={handleLogout}>Logout</button>}
+				{!isUserLoggedin && showLoginScreen && (
 					<>
 						<h1>Login...</h1>
 						<button
@@ -42,7 +79,7 @@ function UsernameAndPassword() {
 						</button>
 					</>
 				)}
-				{!showLoginScreen && (
+				{!isUserLoggedin && !showLoginScreen && (
 					<>
 						<h1>Subscribe or</h1>
 						<button
@@ -55,16 +92,18 @@ function UsernameAndPassword() {
 					</>
 				)}
 			</div>
-			{showLoginScreen && isUserLoggedin && (
+			{!isUserLoggedin && showLoginScreen && (
 				<LoginScreen
 					usernameValue={usernameValue}
 					passwordValue={passwordValue}
 					handleUsernameChange={handleUsernameChange}
 					handlePasswordChange={handlePasswordChange}
+					handleLogin={handleLogin}
+					formIsValid={formIsValid}
 				/>
 			)}
 
-			{!showLoginScreen && (
+			{!isUserLoggedin && !showLoginScreen && (
 				<SubscribeScreen
 					usernameValue={usernameValue}
 					passwordValue={passwordValue}

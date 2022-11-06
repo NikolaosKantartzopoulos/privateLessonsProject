@@ -19,7 +19,13 @@ export default function LoginScreen(props) {
 					onChange={props.handlePasswordChange}
 				/>
 			</label>
-			<button type="submit">Login</button>
+			<button
+				type="submit"
+				onClick={props.handleLogin}
+				disabled={!props.formIsValid}
+			>
+				Login
+			</button>
 		</form>
 	);
 }
