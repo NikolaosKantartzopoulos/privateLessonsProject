@@ -3,7 +3,8 @@
   background-repeat: no-repeat;
   background-position: center;
   height: 85vh;
-  display: grid;
+  display: flex;
+  flex-flow: column;
 }
 
 #bgImageText {
@@ -11,4 +12,47 @@
   color: white;
   text-align: center;
   margin: auto;
+
+}
+
+.nasaPicDiv {
+  display: grid;
+  grid-template-columns: 1fr;
+  width: 66%;
+
+}
+
+#nasaPic {
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  height: 60vh;
+}
+
+#nasaPicClicked {
+  margin: auto;
+  border: 1vw double purple;
+  max-height: calc(60vh - 2vw);
+}
+
+#picTitle {
+
+  background-color: #fff;
+  color: purple;
+  text-align: center;
+  margin: 1rem;
+  border: 3px solid purple;
+  border-radius: 1vw;
+}
+
+.isLoadingScreen {
+  background-color: #fff;
+  color: purple;
+  text-align: center;
+  margin: 1rem;
+  border: 3px solid purple;
+  border-radius: 1vw;
+  max-height: 2rem;
+  width: 50vw;
+  text-align: center;
 }

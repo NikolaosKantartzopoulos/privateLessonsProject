@@ -21,8 +21,8 @@ function UsernameAndPassword() {
 	useEffect(() => {
 		const identifier = setTimeout(() => {
 			console.log("checking validity");
-			setFormIsValid(passwordValue.length > 4 && usernameValue.length > 4);
-		}, 500);
+			setFormIsValid(passwordValue.length > 3 && usernameValue.length > 3);
+		}, 400);
 		return () => {
 			console.log("Cleanup");
 			clearTimeout(identifier);
@@ -42,7 +42,7 @@ function UsernameAndPassword() {
 	function handleLogin(event) {
 		event.preventDefault();
 
-		if (usernameValue.length > 5) {
+		if (formIsValid) {
 			localStorage.setItem("isLoggedIn", "1");
 			setIsUserLoggedin(true);
 		}

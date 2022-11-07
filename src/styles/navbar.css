@@ -107,6 +107,7 @@
 @media only screen and (max-width: 720px) {
   #navbarMain {
     justify-content: space-between;
+    min-height: 8rem;
   }
 
   #navLeft {
