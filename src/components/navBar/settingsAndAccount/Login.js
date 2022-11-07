@@ -9,15 +9,15 @@ function Login() {
 	const [loginBorderColor, setLoginBorderColor] = useState("black");
 
 	function handleLoginMouseEnter() {
-		setLoginDropdownClass("loginDropdownShow");
-		setLoginBackgroundColor("purple");
-		setLoginBorderColor("white");
-	}
-
-	function handleLoginMouseLeave() {
-		setLoginDropdownClass("loginDropdown");
-		setLoginBackgroundColor("black");
-		setLoginBorderColor("black");
+		if (loginDropdownClass == "loginDropdown") {
+			setLoginDropdownClass("loginDropdownShow");
+			setLoginBackgroundColor("purple");
+			setLoginBorderColor("white");
+		} else {
+			setLoginDropdownClass("loginDropdown");
+			setLoginBackgroundColor("black");
+			setLoginBorderColor("black");
+		}
 	}
 
 	return (
@@ -32,7 +32,7 @@ function Login() {
 				}}
 			/>
 
-			<div className={loginDropdownClass} onMouseLeave={handleLoginMouseLeave}>
+			<div className={loginDropdownClass}>
 				<UsernameAndPassword />
 			</div>
 		</div>

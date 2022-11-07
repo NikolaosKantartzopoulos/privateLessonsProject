@@ -12,7 +12,6 @@ function UsernameAndPassword() {
 
 	useEffect(() => {
 		const storedUserLoggedInInformation = localStorage.getItem("isLoggedIn");
-
 		if (storedUserLoggedInInformation === "1") {
 			setIsUserLoggedin(true);
 		}
@@ -55,7 +54,26 @@ function UsernameAndPassword() {
 
 	async function handleNewSubscription(event) {
 		event.preventDefault();
-		//  function postData(url = 'https://privatelessons-3387a-default-rtdb.europe-west1.firebasedatabase.app/', data = {}) {
+
+		let user = {
+			username: usernameValue,
+			password: passwordValue,
+			email: emailValue,
+		};
+
+		console.log(user);
+		const response = await fetch(
+			"https://privatelessons-3387a-default-rtdb.europe-west1.firebasedatabase.app/users.json",
+			{
+				method: "POST",
+				body: JSON.stringify(user),
+				headers: {
+					"Content-Type": "application/json",
+				},
+			}
+		);
+		const data = await response.json();
+		console.log(data);
 	}
 
 	function submitLoginInformation(event) {
