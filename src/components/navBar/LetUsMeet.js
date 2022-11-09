@@ -1,5 +1,5 @@
 import React, { useCallback } from "react";
-
+import { Link } from "react-router-dom";
 import profImg from "../../images/prof.png";
 
 function LetUsMeet() {
@@ -12,7 +12,7 @@ function LetUsMeet() {
 				<h2 className="text-2xl p-2">Let us meet!</h2>
 				<p className="text-xl p-2">Professor John MSc</p>
 				<button id="cvDiv" className="w-1/2 mx-auto mt-[10px]">
-					Let us Meet!
+					<Link to="/about">Let us Meet!</Link>
 				</button>
 			</div>
 		</div>

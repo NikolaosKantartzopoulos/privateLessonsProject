@@ -3,9 +3,9 @@ import LiTab from "../helperComponents/LiTab";
 import "../../styles/navbar.css";
 import Login from "./settingsAndAccount/Login";
 import Settings from "./settingsAndAccount/Settings";
+import { Link } from "react-router-dom";
 
 function MainNavbar(props) {
-	let { activeTab, setActiveTab } = props;
 	return (
 		<div id="navbarMain" className="shadowBlock">
 			<div id="navLeft">
@@ -13,34 +13,28 @@ function MainNavbar(props) {
 				<p>Professor John MSc</p>
 			</div>
 			<ul id="navRight" className="tabUl">
-				<LiTab
-					tabName="Home"
-					activeTab={activeTab}
-					setActiveTab={setActiveTab}
-					hasDropdown={true}
-					dropdownContent={"Dummy Content"}
-					tabDescriptionShow={true}
-				/>
-				<LiTab
-					tabName="About"
-					activeTab={activeTab}
-					setActiveTab={setActiveTab}
-					tabDescriptionShow={true}
-				/>
-				<LiTab
-					tabName="Online Test"
-					activeTab={activeTab}
-					setActiveTab={setActiveTab}
-					tabDescriptionShow={true}
-				/>
-				<LiTab
-					tabName="Study Guide"
-					activeTab={activeTab}
-					setActiveTab={setActiveTab}
-					hasDropdown={true}
-					dropdownContent={"Dummy Content"}
-					tabDescriptionShow={true}
-				/>
+				<Link to="/">
+					<LiTab
+						tabName="Home"
+						hasDropdown={true}
+						dropdownContent={"Dummy Content"}
+						tabDescriptionShow={true}
+					/>
+				</Link>
+				<Link to="/about">
+					<LiTab tabName="About" tabDescriptionShow={true} />{" "}
+				</Link>
+				<Link to="/onlinetest">
+					<LiTab tabName="Online Test" tabDescriptionShow={true} />{" "}
+				</Link>
+				<Link to="/studyguide">
+					<LiTab
+						tabName="Study Guide"
+						hasDropdown={true}
+						dropdownContent={"Dummy Content"}
+						tabDescriptionShow={true}
+					/>{" "}
+				</Link>
 			</ul>
 
 			<div className="navAccount">

@@ -26,12 +26,6 @@ function LiTab(props) {
 		return (
 			<li
 				className="tabLi"
-				onClick={() => props.setActiveTab(props.tabName)}
-				style={
-					props.activeTab == props.tabName
-						? { backgroundColor: "purple", border: "1px solid white" }
-						: {}
-				}
 				onMouseEnter={handleMouseIn}
 				onMouseLeave={handleMouseOut}
 			>

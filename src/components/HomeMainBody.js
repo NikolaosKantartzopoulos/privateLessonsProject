@@ -42,7 +42,7 @@ function HomeMainBody() {
 							<div className="isLoadingScreen">Loading...</div>
 						)}
 						{nasaPicClicked && !isLoading && (
-							<div style={{ height: "60vh" }}>
+							<div style={{ height: "50vh" }}>
 								<img id="nasaPicClicked" src={picURL} />
 								<p id="picTitle">{picTitle}</p>
 							</div>

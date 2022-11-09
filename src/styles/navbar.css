@@ -23,6 +23,13 @@
 
 }
 
+#navRight>* {
+  margin-right: 0.3rem;
+}
+
+
+
+
 .navAccount {
 
   display: flex;

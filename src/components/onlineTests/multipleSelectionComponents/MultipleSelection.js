@@ -118,7 +118,7 @@ RETURN
 				border: `5px solid ${compBorderColor}`,
 			}}
 		>
-			<div class="multipleSelectionHeader">
+			<div className="multipleSelectionHeader">
 				{/****************EXERCISE'S GOAL****************/}
 				<div className="testGoal"> {testGoal}</div>
 				{/****************EXERCISE'S GOAL****************/}

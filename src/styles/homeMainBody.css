@@ -32,7 +32,7 @@
 #nasaPicClicked {
   margin: auto;
   border: 1vw double purple;
-  max-height: calc(60vh - 2vw);
+  max-height: calc(50vh - 2vw);
 }
 
 #picTitle {
