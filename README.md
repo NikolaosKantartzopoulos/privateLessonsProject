@@ -1,8 +1,20 @@
-### Private lessons sample Page
+### [LIVE](https://privatelessons-3387a.web.app/) --- Private lessons sample Page 
+
+```
+git clone https://github.com/NikolaosKantartzopoulos/privateLessonsProject.git
+```
+
+```
+npm i
+```
+
+```
+npm run dev
+```
 
 ### Project's objective
 
-- Use React to create:
+- Use [React](https://reactjs.org/) to create:
   - Animated buttons
   - A working navbar with pseudotabs
   - Dropdown menus
@@ -10,9 +22,9 @@
 
 ### Built using
 
-- React
-- Webpack
+- [React](https://reactjs.org/) 
+- [Webpack](https://webpack.js.org/) 
 
-### --- [LIVE] ---(https://privatelessons-3387a.web.app/)
+
 
 
