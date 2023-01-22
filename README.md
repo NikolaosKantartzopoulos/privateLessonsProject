@@ -1,15 +1,7 @@
 ### [LIVE](https://privatelessons-3387a.web.app/) --- Private lessons sample Page 
 
 ```
-git clone https://github.com/NikolaosKantartzopoulos/privateLessonsProject.git
-```
-
-```
-npm i
-```
-
-```
-npm run dev
+git clone https://github.com/NikolaosKantartzopoulos/privateLessonsProject.git && npm i && npm run dev
 ```
 
 ### Project's objective
@@ -24,7 +16,3 @@ npm run dev
 
 - [React](https://reactjs.org/) 
 - [Webpack](https://webpack.js.org/) 
-
-
-
-
