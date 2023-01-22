@@ -13,6 +13,6 @@
 - React
 - Webpack
 
-### See it live!
+### See it [live](https://privatelessons-3387a.web.app/)
 
-https://nikolaoskantartzopoulos.github.io/privateLessonsProject/
+
