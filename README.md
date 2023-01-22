@@ -13,6 +13,6 @@
 - React
 - Webpack
 
-### See it [live](https://privatelessons-3387a.web.app/)
+### See it [LIVE](https://privatelessons-3387a.web.app/)
 
 
